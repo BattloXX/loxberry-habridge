@@ -43,7 +43,7 @@ echo "<INFO> Base folder is: $ARGV5"
 # Download
 echo "<INFO> Getting habridge Sources from https://github.com"
 mkdir -p /opt/loxberry/data/plugins/p3_lox_habridge/
-/usr/bin/wget --progress=dot:mega -t 10 -O /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar https://github.com/bwssytems/ha-bridge/releases/download/v5.3.0/ha-bridge-5.3.0.jar
+/usr/bin/wget --progress=dot:mega -t 10 -O /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar https://github.com/bwssytems/ha-bridge/releases/download/v5.3.1RC2/ha-bridge-5.3.1RC2.jar
 if [ ! -f /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar ]; then
     echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
