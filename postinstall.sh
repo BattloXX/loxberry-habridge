@@ -53,7 +53,7 @@ rm -f /tmp/p3-device.db
 
 #start once with root
 
-nohup java -jar -Dserver.port=8080 -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar
+#nohup java -jar -Dserver.port=8080 -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar
 
 # Exit with Status 0
 exit 0
