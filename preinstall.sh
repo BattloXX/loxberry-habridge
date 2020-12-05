@@ -44,7 +44,8 @@ echo "<INFO> Base folder is: $ARGV5"
 echo "<INFO> Getting habridge Sources from https://github.com"
 mkdir -p /opt/loxberry/data/plugins/p3_lox_habridge/
 /usr/bin/wget --progress=dot:mega -t 10 -O /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.4RC3/ha-bridge-5.3.1RC3-java11.jar
-    echo "<FAIL> Something went wrong while trying to download habridge Sources."
+if [ ! -f /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar ]; then   
+   echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
 else
     echo "<OK> Habridge Sources downloaded successfully."
