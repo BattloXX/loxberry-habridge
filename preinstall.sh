@@ -47,7 +47,7 @@ mkdir -p /opt/loxberry/data/plugins/p3_lox_habridge/
     echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
 else
-    echo "<OK> Habridge Sources downloaded successfully.".jar
+    echo "<OK> Habridge Sources downloaded successfully."
 fi
 
 # Exit with Status 0
