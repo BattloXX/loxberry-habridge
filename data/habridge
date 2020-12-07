@@ -9,7 +9,7 @@
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
 dir="/opt/loxberry/data/plugins/p3_lox_habridge/"
-cmd="nohup java -jar -Dserver.port=80 -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar"
+cmd="nohup java -jar -Dserver.port=80 -Djava.net.preferIPv4Stack=true -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar"
 user=""
 name="habridge"
 pid_file="/tmp/ha-$name.pid"
