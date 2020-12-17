@@ -52,7 +52,7 @@ cp $5/data/plugins/$3/data/device.db /tmp/p3-device.db
 
 echo "<INFO> Getting habridge Sources from https://github.com"
 rm /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar
-/usr/bin/wget --progress=dot:mega -t 10 -O /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.5RC5/ha-bridge-5.3.1RC5-java11.jar
+/usr/bin/wget --progress=dot:mega -t 10 -O /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.5/ha-bridge-5.4.0-java11.jar
 if [ ! -f /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar ]; then
     echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
