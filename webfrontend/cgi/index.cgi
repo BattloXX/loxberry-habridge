@@ -95,7 +95,7 @@ if ( param('do') ) {
 
 # Vars for template
 $template_title = "LoxBerry: habridge Plugin";
-$loxberryhost = "$ENV{HTTP_HOST}";
+$loxberryhost = "$ENV{'SERVER_NAME'}";
 #$habridgestatus = qx($installfolder/system/daemons/plugins/$psubfolder status);
 
 # Print Template
