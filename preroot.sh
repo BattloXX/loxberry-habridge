@@ -1,5 +1,31 @@
-#!/bin/sh
-
+#!/bin/bash
+ 
+# Shell script which is executed *BEFORE* installation is started
+# (*BEFORE* preinstall and *BEFORE* preupdate). Use with caution and remember,
+# that all systems may be different!
+#
+# Exit code must be 0 if executed successfull.
+# Exit code 1 gives a warning but continues installation.
+# Exit code 2 cancels installation.
+#
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Will be executed as user "root".
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#
+# You can use all vars from /etc/environment in this script.
+#
+# We add 5 additional arguments when executing this script:
+# command <TEMPFOLDER> <NAME> <FOLDER> <VERSION> <BASEFOLDER>
+#
+# For logging, print to STDOUT. You can use the following tags for showing
+# different colorized information during plugin installation:
+#
+# <OK> This was ok!"
+# <INFO> This is just for your information."
+# <WARNING> This is a warning!"
+# <ERROR> This is an error!"
+# <FAIL> This is a fail!"
+ 
 # To use important variables from command line use the following code:
 COMMAND=$0    # Zero argument is shell command
 PTEMPDIR=$1   # First argument is temp folder during install
@@ -19,26 +45,17 @@ PLOG=$LBPLOG/$PDIR # Note! This is stored on a Ramdisk now!
 PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
-
-$PDATA/habridge stop
-
-if [ ! -f "$5/data/plugins/$3/data/device.db" ]
-then
-	return 0
-fi
-echo "<INFO> Backup device.db"
-cp $PDATA/data/device.db /tmp/p3-device.db
-
+ 
+# Download
 echo "<INFO> Getting habridge Sources from https://github.com"
-rm $PDATA/ha-bridge.jar
+mkdir -p $PDATA
 /usr/bin/wget --progress=dot:mega -t 10 -O $PDATA/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.6/ha-bridge-5.4.1-java11.jar
-if [ ! -f $PDATA/ha-bridge.jar ]; then
-    echo "<FAIL> Something went wrong while trying to download habridge Sources."
+if [ ! -f $PDATA/ha-bridge.jar ]; then   
+   echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
 else
     echo "<OK> Habridge Sources downloaded successfully."
 fi
-
 
 # Exit with Status 0
 exit 0

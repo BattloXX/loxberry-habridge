@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
+ 
 # To use important variables from command line use the following code:
 COMMAND=$0    # Zero argument is shell command
 PTEMPDIR=$1   # First argument is temp folder during install
@@ -19,26 +19,23 @@ PLOG=$LBPLOG/$PDIR # Note! This is stored on a Ramdisk now!
 PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
+ 
+chmod 755 $PDATA/habridge
 
-$PDATA/habridge stop
-
-if [ ! -f "$5/data/plugins/$3/data/device.db" ]
+if [ ! -f "/tmp/p3-device.db" ]
 then
 	return 0
 fi
-echo "<INFO> Backup device.db"
-cp $PDATA/data/device.db /tmp/p3-device.db
 
-echo "<INFO> Getting habridge Sources from https://github.com"
-rm $PDATA/ha-bridge.jar
-/usr/bin/wget --progress=dot:mega -t 10 -O $PDATA/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.6/ha-bridge-5.4.1-java11.jar
-if [ ! -f $PDATA/ha-bridge.jar ]; then
-    echo "<FAIL> Something went wrong while trying to download habridge Sources."
-    exit 1
-else
-    echo "<OK> Habridge Sources downloaded successfully."
-fi
+echo "<INFO> Recover device.db backup"
+mkdir -p $PDATA/data/
+cp /tmp/p3-device.db $PDATA/data/device.db
+rm -f /tmp/p3-device.db
 
+#start once with root
+
+nohup java -jar -Dserver.port=80 -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar &
 
 # Exit with Status 0
 exit 0
+

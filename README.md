@@ -1,12 +1,4 @@
-# loxberry-habridge
-A LoxBerry Plugin
--
-For Details visit https://loxwiki.atlassian.net
+# LoxBerry-Plugin-FHEM
+A LoxBerry Plugin: http://plugins.loxberry.de/
 
-https://loxwiki.atlassian.net/wiki/spaces/LOXBERRY/pages/1209205033/LoxBerry+HA+Bridge
-
-# collaborators
-@p3root (Patrik Pfaffenbauer - patrik.pfaffenbauer@p3.co.at)
-@Muto1899
-@BattloXX
-@blacksun80
+For Details visit http://www.loxwiki.eu:80/x/f4K4
