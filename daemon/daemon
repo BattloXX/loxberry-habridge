@@ -14,7 +14,8 @@
 if [ -x /usr/bin/logger ]
 then
     /usr/bin/logger "Starting HABridge"
-	/opt/loxberry/data/plugins/p3_lox_habridge/habridge start
+    	$PDIR/habridge start
+#/opt/loxberry/data/plugins/p3_lox_habridge/habridge start
 fi
 
 exit 0
