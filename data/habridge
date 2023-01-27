@@ -8,13 +8,13 @@
 # Short-Description: Start daemon at boot time
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
-dir="/opt/loxberry/data/plugins/p3_lox_habridge/"
-cmd="nohup java -jar -Dserver.port=80 -Djava.net.preferIPv4Stack=true -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge/ha-bridge.jar"
+dir="$PDIR"
+cmd="nohup java -jar -Dserver.port=80 -Djava.net.preferIPv4Stack=true -Dconfig.file=$PDIR/habridge.config $PDIR/ha-bridge.jar"
 user=""
 name="habridge"
 pid_file="/tmp/ha-$name.pid"
-stdout_log="/opt/loxberry/log/plugins/p3_lox_habridge/$name.log"
-stderr_log="/opt/loxberry/log/plugins/p3_lox_habridge/$name.err"
+stdout_log="$PDIR/$name.log"
+stderr_log="$PDIR/$name.err"
 get_pid() {
     cat "$pid_file"
 }
