@@ -28,8 +28,8 @@ then
 fi
 
 echo "<INFO> Recover device.db backup"
-mkdir -p $PDATA/data/
-cp /tmp/p3-device.db $PDATA/data/device.db
+mkdir -p $PDIR/data/
+cp /tmp/p3-device.db $PDIR/data/device.db
 rm -f /tmp/p3-device.db
 
 #start once with root
