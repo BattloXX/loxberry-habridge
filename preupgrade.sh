@@ -20,7 +20,7 @@ PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
 
-$PDATA/habridge stop
+$PDIR/habridge stop
 
 if [ ! -f "$PDIR/data/device.db" ]
 then
