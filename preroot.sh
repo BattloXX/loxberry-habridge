@@ -47,9 +47,9 @@ PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
  
 # Download
-echo "<INFO> Getting habridge Sources from https://github.com"
-mkdir -p $PDATA
-/usr/bin/wget --progress=dot:mega -t 10 -O $PDATA/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.6/ha-bridge-5.4.1-java11.jar
+#echo "<INFO> Getting habridge Sources from https://github.com"
+#mkdir -p $PDATA
+#/usr/bin/wget --progress=dot:mega -t 10 -O $PDATA/ha-bridge.jar https://github.com/BattloXX/loxberry-habridge/releases/download/0.3.6/ha-bridge-5.4.1-java11.jar
 if [ ! -f $PDATA/ha-bridge.jar ]; then   
    echo "<FAIL> Something went wrong while trying to download habridge Sources."
     exit 1
