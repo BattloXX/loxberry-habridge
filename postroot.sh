@@ -20,7 +20,7 @@ PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
  
-chmod 755 $PDATA/habridge
+chmod 755 $PDIR/habridge
 
 if [ ! -f "/tmp/p3-device.db" ]
 then
