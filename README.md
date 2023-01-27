@@ -1,4 +1,4 @@
-# LoxBerry-Plugin-FHEM
-A LoxBerry Plugin: http://plugins.loxberry.de/
+# LoxBerry-HA-Bridge
+A LoxBerry Plugin: https://wiki.loxberry.de/start
 
-For Details visit http://www.loxwiki.eu:80/x/f4K4
+For Details visit https://wiki.loxberry.de/plugins/loxberry_ha_bridge/start
