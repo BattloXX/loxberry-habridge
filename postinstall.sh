@@ -1,13 +1,8 @@
-es (58 sloc)  2.3 KB
- 
+#!/bin/bash
 
-#!/bin/sh
-
-# Bash script which is executed in case of an update (if this plugin is already
-# installed on the system). This script is executed as very last step (*AFTER*
-# postinstall) and can be for example used to save back or convert saved
-# userfiles from /tmp back to the system. Use with caution and remember, that
-# all systems may be different!
+# Shell script which is executed by bash *AFTER* complete installation is done
+# (but *BEFORE* postupdate). Use with caution and remember, that all systems may
+# be different!
 #
 # Exit code must be 0 if executed successfull. 
 # Exit code 1 gives a warning but continues installation.
@@ -53,6 +48,7 @@ echo -n "<INFO> Current working folder is: "
 pwd
 echo "<INFO> Command is: $COMMAND"
 echo "<INFO> Temporary folder is: $PTEMPDIR"
+echo "<INFO> Temporary full path is: $PTEMPPATH"
 echo "<INFO> (Short) Name is: $PSHNAME"
 echo "<INFO> Installation folder is: $PDIR"
 echo "<INFO> Plugin version is: $PVERSION"
@@ -63,4 +59,5 @@ echo "<INFO> Plugin Data folder is: $PDATA"
 echo "<INFO> Plugin Log folder (on RAMDISK!) is: $PLOG"
 echo "<INFO> Plugin CONFIG folder is: $PCONFIG"
 
+# Exit with Status 0
 exit 0

@@ -20,13 +20,13 @@ PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
 
-$PDIR/habridge stop
+$PDATA/habridge stop
 
-if [ ! -f "$PDIR/data/device.db" ]
+if [ ! -f "$PDATA/data/device.db" ]
 then
 	return 0
 fi
 echo "<INFO> Backup device.db"
-cp $PDIR/data/device.db /tmp/p3-device.db
+cp $PDATA/data/device.db /tmp/p3-device.db
 # Exit with Status 0
 exit 0

@@ -11,11 +11,13 @@
 # Name this file "daemon.sh" in your plugin-archive. It will be renamed to NAME
 # during installation
 
+pluginname=p3_lox_habridge
+PDATA=$LBPDATA/$pluginname
+
 if [ -x /usr/bin/logger ]
 then
     /usr/bin/logger "Starting HABridge"
-    	$PDIR/habridge start
-#/opt/loxberry/data/plugins/p3_lox_habridge/habridge start
+    	$PDATA/habridge start
 fi
 
 exit 0
