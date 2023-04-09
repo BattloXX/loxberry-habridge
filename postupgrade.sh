@@ -1,6 +1,3 @@
-es (58 sloc)  2.3 KB
- 
-
 #!/bin/sh
 
 # Bash script which is executed in case of an update (if this plugin is already
