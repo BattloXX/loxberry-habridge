@@ -8,13 +8,15 @@
 # Short-Description: Start daemon at boot time
 # Description:       Enable service provided by daemon.
 ### END INIT INFO
-dir="$PDIR"
-cmd="nohup java -jar -Dserver.port=80 -Djava.net.preferIPv4Stack=true -Dconfig.file=$PDIR/habridge.config $PDIR/ha-bridge.jar"
+pluginname=p3_lox_habridge
+PDATA=$LBPDATA/$pluginname
+dir="$PDATA"
+cmd="nohup java -jar -Dserver.port=80 -Djava.net.preferIPv4Stack=true -Dconfig.file=$PDATA/habridge.config $PDATA/ha-bridge.jar"
 user=""
 name="habridge"
 pid_file="/tmp/ha-$name.pid"
-stdout_log="$PDIR/$name.log"
-stderr_log="$PDIR/$name.err"
+stdout_log="$PDATA/$name.log"
+stderr_log="$PDATA/$name.err"
 get_pid() {
     cat "$pid_file"
 }
@@ -26,7 +28,7 @@ case "$1" in
     if is_running; then
         echo "Already started"
     else
-        echo "Starting $name"
+        echo "Starting $name" 
         cd "$dir"
 		$cmd >> "$stdout_log" 2>> "$stderr_log" &
         echo $! > "$pid_file"

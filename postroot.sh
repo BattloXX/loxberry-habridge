@@ -20,7 +20,7 @@ PCONFIG=$LBPCONFIG/$PDIR
 PSBIN=$LBPSBIN/$PDIR
 PBIN=$LBPBIN/$PDIR
  
-chmod 755 $PDIR/habridge
+chmod 755 $PDATA/habridge
 
 if [ ! -f "/tmp/p3-device.db" ]
 then
@@ -28,13 +28,14 @@ then
 fi
 
 echo "<INFO> Recover device.db backup"
-mkdir -p $PDIR/data/
-cp /tmp/p3-device.db $PDIR/data/device.db
+mkdir -p $PDATA/data/
+cp /tmp/p3-device.db $PDATA/data/device.db
 rm -f /tmp/p3-device.db
 
 #start once with root
-
-nohup java -jar -Dserver.port=80 -Dconfig.file=$PDIR/habridge.config $PDIR/ha-bridge.jar &
+echo "<INFO> Will now start once with root"
+$PDATA/habridge start
+# nohup java -jar -Dserver.port=80 -Dconfig.file=$PDATA/habridge.config $PDATA/ha-bridge.jar &
 
 # Exit with Status 0
 exit 0
